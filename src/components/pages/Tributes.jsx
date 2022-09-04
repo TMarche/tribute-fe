@@ -59,6 +59,7 @@ const Tributes = () => {
             <div>
                 {tributes.map((tribute) => (
                     <TributeOverview
+                        key={tribute._id}
                         tribute={tribute}
                         setTributes={setTributes}
                     />
