@@ -6,7 +6,9 @@ import TributeOverview from "../TributeOverview";
 const Tributes = () => {
     const [tributes, setTributes] = useState([]);
     const [name, setName] = useState("");
+
     useEffect(() => {
+        // Fetch all tributes
         axios({
             method: "get",
             url: "http://localhost:3333/api/tribute",
@@ -21,6 +23,7 @@ const Tributes = () => {
     }, []);
 
     const handleAdd = () => {
+        // Handle adding a single tribute
         if (name) {
             axios({
                 method: "post",
@@ -30,9 +33,10 @@ const Tributes = () => {
                 },
             })
                 .then((response) => {
+                    const { tribute } = response.data;
                     console.log("Success! Added tribute");
                     console.log(response.data);
-                    setTributes([...tributes, name]);
+                    setTributes([...tributes, tribute]);
                     setName("");
                 })
                 .catch((response) => {
@@ -53,8 +57,11 @@ const Tributes = () => {
                 Add
             </div>
             <div>
-                {tributes.map((name) => (
-                    <TributeOverview name={name} />
+                {tributes.map((tribute) => (
+                    <TributeOverview
+                        tribute={tribute}
+                        setTributes={setTributes}
+                    />
                 ))}
             </div>
         </>

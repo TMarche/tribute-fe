@@ -1,5 +1,5 @@
-const TributeOverview = ({ name }) => {
-    return <div>{name}</div>;
+const TributeOverview = ({ tribute }) => {
+    return <div>{tribute.name}</div>;
 };
 
 export default TributeOverview;
