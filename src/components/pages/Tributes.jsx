@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import styled from "styled-components";
 import TributeOverview from "../TributeOverview";
 
-const Tributes = () => {
+const Tributes = ({ className }) => {
     const [tributes, setTributes] = useState([]);
     const [name, setName] = useState("");
 
@@ -47,7 +48,7 @@ const Tributes = () => {
     };
 
     return (
-        <>
+        <div className={className}>
             <div>TRIBUTES</div>
             <div>
                 <input value={name} onChange={(e) => setName(e.target.value)} />
@@ -65,8 +66,10 @@ const Tributes = () => {
                     />
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 
-export default Tributes;
+export default styled(Tributes)`
+    padding: 3rem;
+`;
