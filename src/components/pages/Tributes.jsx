@@ -47,11 +47,21 @@ const Tributes = ({ className }) => {
         }
     };
 
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            handleAdd();
+        }
+    };
+
     return (
         <div className={className}>
             <div>TRIBUTES</div>
             <div>
-                <input value={name} onChange={(e) => setName(e.target.value)} />
+                <input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                />
             </div>
             <div>
                 <button onClick={handleAdd}>+</button>
@@ -71,5 +81,5 @@ const Tributes = ({ className }) => {
 };
 
 export default styled(Tributes)`
-    padding: 3rem;
+    /* padding: 3rem; */
 `;

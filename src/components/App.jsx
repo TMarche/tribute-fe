@@ -8,6 +8,8 @@ import Events from "./pages/Events";
 import Maps from "./pages/Maps";
 import Items from "./pages/Items";
 import Games from "./pages/Games";
+import GameDetail from "./pages/GameDetail";
+import "antd/dist/antd.css";
 
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
@@ -19,11 +21,6 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-    }
-
-    body {
-        background-color: #2F3037;
-        color: white;
     }
 `;
 
@@ -44,6 +41,7 @@ const App = () => (
                     <Route path="/maps" element={<Maps />}></Route>
                     <Route path="/items" element={<Items />}></Route>
                     <Route path="/games" element={<Games />}></Route>
+                    <Route path="/games/:id" element={<GameDetail />}></Route>
                 </Routes>
             </div>
         </BrowserRouter>

@@ -13,23 +13,6 @@ const Navigation = ({ className }) => (
             <Link to="/items">Items</Link>
             <Link to="/games">Games</Link>
         </div>
-        {/* <ul className="nav-list">
-            <li>
-                <Link to="/tributes">Tributes</Link>
-            </li>
-            <li>
-                <Link to="/events">Events</Link>
-            </li>
-            <li>
-                <Link to="/maps">Maps</Link>
-            </li>
-            <li>
-                <Link to="/items">Items</Link>
-            </li>
-            <li>
-                <Link to="/games">Games</Link>
-            </li>
-        </ul> */}
     </nav>
 );
 
