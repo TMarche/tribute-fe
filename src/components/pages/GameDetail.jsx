@@ -70,6 +70,9 @@ const GameDetail = ({ className }) => {
             <div>
                 GAME DETAIL FOR {game.name} {game.description}
             </div>
+            <div>
+                <button>SAVE</button>
+            </div>
             <div>Map</div>
             <div className="container__transfer-tribute">
                 <div>Tributes</div>
